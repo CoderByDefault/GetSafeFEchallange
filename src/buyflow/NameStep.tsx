@@ -16,7 +16,7 @@ const NameStep: React.FC<NameStepProps> = (props) => {
       <div>
         <form onSubmit={() => props.cb("name", name)}>
         <label>Full Name: </label>
-        <input type="text" onChange={handleChange} required value={name}></input>
+        <input type="text" onChange={handleChange} required value={name} pattern="/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u"></input>
         <br />
         <button type="submit">Next</button>
         </form>
