@@ -9,16 +9,20 @@ const AgeStep: React.FC<AgeStepProps> = (props) => {
   return (
     <>
       <div>
-        Age:{' '}
+      <form onSubmit={() => props.cb('age', age)}>
+        <label>Age: </label>
         <input
+        required
           type="number"
           onChange={({ target: { value } }) => {
             setAge(Number(value))
           }}
           value={age}
         ></input>
+        <br />
+        <button type="submit">Next</button>
+        </form>
       </div>
-      <button onClick={() => props.cb('age', age)}>Next</button>
     </>
   )
 }

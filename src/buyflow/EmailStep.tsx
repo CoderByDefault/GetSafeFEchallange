@@ -9,16 +9,21 @@ const EmailStep: React.FC<EmailStepProps> = (props) => {
   return (
     <>
       <div>
-        Email:{' '}
+      <form onSubmit={() => props.cb('email', email)}>
+        <label>Email: </label>
         <input
+        required
           type="email"
           onChange={({ target: { value } }) => {
             setEmail(value)
           }}
           value={email}
         ></input>
+        <br />
+        <button type="submit">Next</button>
+        </form>
+        
       </div>
-      <button onClick={() => props.cb('email', email)}>Next</button>
     </>
   )
 }
